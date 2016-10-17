@@ -60,6 +60,92 @@ Array.gram_schmidt( [ [2,5,4], [1,0,1]  ] )
 #=> [[0.29814239699997197, 0.7453559924999299, 0.5962847939999439], [0.669438681395203, -0.6085806194501845, 0.42600643361512913]]
 ```
 
+## Least Squares Method
+
+### Introduction
+
+The [Least Squares Method](https://en.wikipedia.org/wiki/Least_squares) is a method for finding an approximation to incompatible systems.
+
+This algorithm uses Ruby, you need to [install ruby](https://www.ruby-lang.org/es/documentation/installation/) to use it.
+
+### Usage
+
+After installing Ruby, open the [Interactive Ruby Console](https://en.wikipedia.org/wiki/Interactive_Ruby_Shell) by using the command `irb`.
+
+Once in the console you have to load the script:
+
+```ruby
+load "least_squares.rb"
+```
+
+Now you can call the script's method.
+
+### Example
+
+Now that you loaded the script, let's use the method.
+
+The script has a class `Algebra` which has a class method `least_squares` that you can call, passing as parameters the two matrices `a` and `b` from the system: `a x = b`.
+
+For example, if you have the following set of points:
+
+```
+(2; 2)
+(3; 4)
+(4; 3)
+```
+
+This translates to a linear system as:
+
+```
+2 = 2 m + b
+4 = 3 m + b
+3 = 4 m + b
+```
+
+In matrix form the system is:
+
+```
+
+| 2 1 |           | 2 |
+| 3 1 | . | m | = | 4 |
+| 4 1 |   | b |   | 3 |
+
+```
+
+Or
+
+```
+a x = b
+```
+
+Where `a` and `b` are matrices.
+
+Then we can find the best approximation using the least squares method as follows:
+
+First let's create the `a` matrix using the [Matrix](https://ruby-doc.org/stdlib-2.2.0/libdoc/matrix/rdoc/Matrix.html) class from Ruby.
+```ruby
+a = Matrix[ [2, 1], [3, 1], [4, 1] ]
+#=> Matrix[[2, 1], [3, 1], [4, 1]]
+```
+Now let's create the `b` matrix:
+```ruby
+b = Matrix[ [2], [4], [3] ]
+#=> Matrix[[2], [4], [3]]
+```
+
+Finally, to find the approximation we call the class method:
+
+```ruby
+Algebra.least_squares(a, b)
+#=> Matrix[[(1/2)], [(3/2)]]
+```
+So for this example:
+
+```
+m = 1/2
+b = 3/2
+```
+
 ## Contributing
 
 1. Fork it ( https://github.com/juangesino/algebra/fork )
