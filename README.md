@@ -1,8 +1,10 @@
 # Algebra
 
-Methods and algorithms for linear algebra.
+Methods and algorithms for linear algebra:
+1. [Gram-Schmidt](#gram-schmidt)
+2. [Least Squares Method](#least-squares-method)
 
-## Gram-Schmidt
+## 1. Gram-Schmidt
 
 ### Introduction
 
@@ -60,7 +62,7 @@ Array.gram_schmidt( [ [2,5,4], [1,0,1]  ] )
 #=> [[0.29814239699997197, 0.7453559924999299, 0.5962847939999439], [0.669438681395203, -0.6085806194501845, 0.42600643361512913]]
 ```
 
-## Least Squares Method
+## 2. Least Squares Method
 
 ### Introduction
 
