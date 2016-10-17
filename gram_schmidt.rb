@@ -133,7 +133,7 @@ class Array
     normalized
   end
 
-  # Class method to fing the orthonormals from an array of vectors.
+  # Class method to find the orthonormals from an array of vectors.
   def self.gram_schmidt(array)
     # Find the orthogonals of the array.
     orthogonals = Array.orthogonals(array)
