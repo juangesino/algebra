@@ -4,6 +4,7 @@ Methods and algorithms for linear algebra:
 
 1. [Gram-Schmidt](#1-gram-schmidt)
 2. [Least Squares Method](#2-least-squares-method)
+3. [Matrices](#3-matrices)
 
 
 ## 1. Gram-Schmidt
@@ -148,6 +149,57 @@ So for this example:
 ```
 m = 1/2
 b = 3/2
+```
+
+## 3. Matrices
+
+### Introduction
+
+This script contains a compilation of methods for matrices.
+
+This script uses Ruby, you need to [install ruby](https://www.ruby-lang.org/es/documentation/installation/) to use it.
+
+### Usage
+
+After installing Ruby, open the [Interactive Ruby Console](https://en.wikipedia.org/wiki/Interactive_Ruby_Shell) by using the command `irb`.
+
+Once in the console you have to load the script:
+
+```ruby
+load "matrices.rb"
+```
+
+Now you can call any of the script's class methods for the class `Algebra`.
+
+Note that when a method requires a matrix as a parameter, the matrix should be given as an array of arrays where each array represents the matrix's columns such as:
+
+```ruby
+matrix = [ [a11, a21, ..., an1], [a12, a22, ..., an2], ..., [a1m, a2m, ..., anm] ]
+```
+
+### Examples
+
+Now that you loaded the script, let's use some of the methods.
+
+We will define two matrices for these examples:
+```ruby
+a = [ [2, 1], [3, 1], [4, 1] ]
+#=> [[2, 1], [3, 1], [4, 1]]
+
+b = [ [2, 3, 4], [1, 1, 1] ]
+#=> [[2, 3, 4], [1, 1, 1]]
+```
+
+You can transpose a matrix:
+```ruby
+Algebra.transpose(a)
+#=> [[2, 3, 4], [1, 1, 1]]
+```
+
+And you can multiply two matrices:
+```ruby
+Algebra.multiply_matrices(a, b)
+#=> [[29, 9], [9, 3]]
 ```
 
 ## Contributing
