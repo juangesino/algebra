@@ -2,8 +2,8 @@
 
 Methods and algorithms for linear algebra:
 
-1. [Gram-Schmidt](#gram-schmidt)
-2. [Least Squares Method](#least-squares-method)
+1. [Gram-Schmidt](#1-gram-schmidt)
+2. [Least Squares Method](#2-least-squares-method)
 
 
 ## 1. Gram-Schmidt
