@@ -4,8 +4,9 @@ Methods and algorithms for linear algebra:
 
 1. [Gram-Schmidt](#1-gram-schmidt)
 2. [Least Squares Method](#2-least-squares-method)
-3. [Matrices](#3-matrices)
-4. [Vector Space Model](#4-vector-space-model)
+3. [Linear Independence](#3-linear-independence)
+4. [Matrices](#4-matrices)
+5. [Vector Space Model](#5-vector-space-model)
 
 
 ## 1. Gram-Schmidt
@@ -152,7 +153,53 @@ m = 1/2
 b = 3/2
 ```
 
-## 3. Matrices
+## 3. Linear Independence
+
+### Introduction
+
+This script checks if a set of vectors are [linearly independent](https://en.wikipedia.org/wiki/Linear_independence).
+
+Right now the algorithm only solves the linear independence when the number of vectors is equal to the dimension of the vectors. This is because the algorithm just solves the determinant of the system of equations. To solve for other set of vectors, the algorithm should implement a way of solving the system for non-square matrices.
+
+This algorithm uses Ruby, you need to [install ruby](https://www.ruby-lang.org/es/documentation/installation/) to use it.
+
+### Usage
+
+After installing Ruby, open the [Interactive Ruby Console](https://en.wikipedia.org/wiki/Interactive_Ruby_Shell) by using the command `irb`.
+
+Once in the console you have to load the script:
+
+```ruby
+load "linear_independence.rb"
+```
+
+Now you can call the script's class method.
+
+### Examples
+
+To find the if a set of vectors is L.I. (linearly independent) or L.D. (linearly dependent):
+
+```ruby
+Array.are_li?( [ [1, 0], [0, 1]  ] )
+#=> true
+```
+
+A returned value of `true` means the vectors are L.I. and a returned value of `false` means they are L.D.
+
+```ruby
+Array.are_li?( [ [1, 0], [2, 0]  ] )
+#=> false
+```
+
+Notice than an error will be raised if the number of vectors differs from the vector's dimension.
+
+```ruby
+Array.are_li?( [ [1, 0, 0], [0, 1, 0]  ] )
+#=> Dimension Error: This algorithm does not solve systems with non square matrices.
+```
+
+
+## 4. Matrices
 
 ### Introduction
 
@@ -203,7 +250,7 @@ Algebra.multiply_matrices(a, b)
 #=> [[29, 9], [9, 3]]
 ```
 
-## 4. Vector Space Model
+## 5. Vector Space Model
 
 ### Introduction
 
