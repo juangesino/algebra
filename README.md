@@ -1,8 +1,9 @@
 # Algebra
 
-Implementation of linear algebra algorithms in various languages.
+Implementation of linear algebra algorithms in various languages:
 
-Check each folder for the different languages and their algorithms.
+ - [Ruby](https://github.com/juangesino/algebra/tree/master/ruby)
+ - [Octave](https://github.com/juangesino/algebra/tree/master/octave)
 
 ## Contributing
 
